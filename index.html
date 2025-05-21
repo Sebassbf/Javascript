@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>MOTORCODE - Accesorios </title>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content container">
+            <nav class="navigation">
+                <a href="/">
+                    <p class="logotipo">MOTOR<span>CODE</span></p>
+                </a>
+                
+                <div class="btn-cart" id="carrito">
+                    <button type="button"><i class="fa-solid fa-cart-shopping icon-cart "></i></button>  
+                    <span id="cartCount">0</span>
+
+                    <div class="cart">
+                        <div class="cart-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Descripcion</th>
+                                        <th>Precio</th>
+                                        <th>Cantidad</th>
+                                        <th>Accion</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="contentProducts lista-carrito">
+                                    <tr>
+                                        <td><img src="assets/img/productos/producto-01.webp" alt=""></td>
+                                        <td>
+                                            Lorem ipsum dolor sit.
+                                        </td>
+                                        <td>$15</td>
+                                        <td>
+                                            <input type="number" min="1">
+                                        </td>
+                                        <td>
+                                            <button type="button">X</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                    
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="5" class="total">
+                                            <h4 class="heading-total">Total: <span id="total"></span></h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5">
+                                            <button type="button" id="emptyCart">Vaciar carrito</button>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+
+                </div> 
+
+                
+
+            </nav>
+        </div>
+
+        <form class="form-header">
+            <input type="search" name="search" placeholder="Search...">
+            <button type="submit"><i class="fa-solid fa-magnifying-glass icon-glass"></i></button>
+        </form>
+    </header>
+
+    <section class="banner">
+        <div class="banner-grid container">
+            <div class="banner-item">
+                <i class="fa-regular fa-lightbulb icon-banner"></i>
+                <h3><strong>Compra Segura</strong><br> Solo vendemos productos originales y nuevos.</h3>
+            </div>
+            <div class="banner-item">
+                <i class="fa-solid fa-bullseye icon-banner"></i>
+                <h3><strong>Todos los medios de pago</strong><br>Aceptamos tarjetas de Crédito y Débito bancarizadas.</h3>
+            </div>
+            <div class="banner-item">
+                <i class="fa-regular fa-clock icon-banner"></i>
+                <h3><strong>Ofertas y Descuentos</strong><br>Vas a encontrar una gran variedad de productos al mejor precio.</h3>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="products" id="listaProductos">
+            <h2>Productos</h2>
+            <div class="products-grid container">
+                <div class="product">
+                    <img src="assets/img/productos/producto-01.webp" alt="image product">
+                    <div class="product-info">
+                        <h4>Casco Vertigo</h4>
+                        <p class="product-text">Casco Moto Integral Vertigo V32 Influence Rpm1240</p>
+                        
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+
+                        <div class="precio">
+                            <span>$300.000</span>
+                            <p id="currentPrice">$275.000</p>
+                        </div>
+                        <button class="btn-add agregar-carrito" type="button" data-id="1">Añadir al carrito</button>
+                    </div>
+                </div><!--.product-->
+                <div class="product">
+                    <img src="assets/img/productos/producto-02.webp" alt="image product">
+                    <div class="product-info">
+                        <h4>Casco HJC</h4>
+                        <p class="product-text">Casco Integral Pista Hjc Rpha12 Carbono Pinlock Marelli</p>
+                
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                
+                        <div class="precio">
+                            <span>$500.000</span>
+                            <p id="currentPrice">$475.000</p>
+                        </div>
+                        <button class="btn-add agregar-carrito" type="button" data-id="2">Añadir al carrito</button>
+                    </div>
+                </div><!--.product-->
+                <div class="product">
+                    <img src="assets/img/productos/producto-03.webp" alt="image product">
+                    <div class="product-info">
+                        <h4>Casco NZI</h4>
+                        <p class="product-text">Casco Moto Pista Nzi Trendy Raptor Green Grey Yellow </p>
+                
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                
+                        <div class="precio">
+                            <span>$350.000</span>
+                            <p id="currentPrice">$320.000</p>
+                        </div>
+                        <button class="btn-add agregar-carrito" type="button" data-id="3">Añadir al carrito</button>
+                    </div>
+                </div><!--.product-->
+                <div class="product">
+                    <img src="assets/img/productos/producto-04.webp" alt="image product">
+                    <div class="product-info">
+                        <h4>Guantes ProBiker</h4>
+                        <p class="product-text">Guantes Probiker Con Protecciones Cross Enduro Negro</p>
+                
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                
+                        <div class="precio">
+                            <span>$100.000</span>
+                            <p id="currentPrice">$75.000</p>
+                        </div>
+                        <button class="btn-add agregar-carrito" type="button" data-id="4">Añadir al carrito</button>
+                    </div>
+                </div><!--.product-->
+                <div class="product">
+                    <img src="assets/img/productos/producto-05.webp" alt="image product">
+                    <div class="product-info">
+                        <h4>Guantes Leatt</h4>
+                        <p class="product-text">Guante Moto Leatt - Adv Hydradri 7.5</p>
+                
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                
+                        <div class="precio">
+                            <span>$90.000</span>
+                            <p id="currentPrice">$79.000</p>
+                        </div>
+                        <button class="btn-add agregar-carrito" type="button" data-id="5">Añadir al carrito</button>
+                    </div>
+                </div><!--.product-->
+                <div class="product">
+                    <img src="assets/img/productos/producto-06.webp" alt="image product">
+                    <div class="product-info">
+                        <h4>Mochila LED</h4>
+                        <p class="product-text">Mochila Porta Casco Rigida Ojos Led Moto Impermable</p>
+                
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                
+                        <div class="precio">
+                            <span>$800.000</span>
+                            <p id="currentPrice">$725.000</p>
+                        </div>
+                        <button class="btn-add agregar-carrito" type="button" data-id="6">Añadir al carrito</button>
+                    </div>
+                </div><!--.product-->
+                <div class="product">
+                    <img src="assets/img/productos/producto-07.webp" alt="image product">
+                    <div class="product-info">
+                        <h4>Intercomunicador</h4>
+                        <p class="product-text">Intercomunicador Moto Mixio Q58max X2 Radio Fm Pantalla Ip6x</p>
+                
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                
+                        <div class="precio">
+                            <span>$450.000</span>
+                            <p id="currentPrice">$375.000</p>
+                        </div>
+                        <button class="btn-add agregar-carrito" type="button" data-id="7">Añadir al carrito</button>
+                    </div>
+                </div><!--.product-->
+                <div class="product">
+                    <img src="assets/img/productos/producto-08.webp" alt="image product">
+                    <div class="product-info">
+                        <h4>Cadena</h4>
+                        <p class="product-text">Cadena Linga De Acero Cementada Con Eslabones Piton 2 Llaves</p>
+                
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                
+                        <div class="precio">
+                            <span>$105.000</span>
+                            <p id="currentPrice">$95.750</p>
+                        </div>
+                        <button class="btn-add agregar-carrito" type="button" data-id="8">Añadir al carrito</button>
+                    </div>
+                </div><!--.product-->
+                <div class="product">
+                    <img src="assets/img/productos/producto-09.webp" alt="image product">
+                    <div class="product-info">
+                        <h4>Baul</h4>
+                        <p class="product-text">Baul Trasero Moto 34 Litros Con Base Universal Italiano</p>
+                
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                        <i class="fa-solid fa-star icon-star"></i>
+                
+                        <div class="precio">
+                            <span>$200.000</span>
+                            <p id="currentPrice">$189.000</p>
+                        </div>
+                        <button class="btn-add agregar-carrito" type="button" data-id="9">Añadir al carrito</button>
+                    </div>
+                </div><!--.product-->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy;2024 MOTORCODE. All rights reserved</p>
+        </div>
+    </footer>
+
+    <script src="assets/plugins/fontawesome/js/all.min.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
