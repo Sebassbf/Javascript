@@ -15,55 +15,19 @@
                     <p class="logotipo">MOTOR<span>CODE</span></p>
                 </a>
                 
-                <div class="btn-cart" id="carrito">
-                    <button type="button"><i class="fa-solid fa-cart-shopping icon-cart "></i></button>  
-                    <span id="cartCount">0</span>
-
-                    <div class="cart">
-                        <div class="cart-responsive">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Imagen</th>
-                                        <th>Descripcion</th>
-                                        <th>Precio</th>
-                                        <th>Cantidad</th>
-                                        <th>Accion</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="contentProducts lista-carrito">
-                                    <tr>
-                                        <td><img src="assets/img/productos/producto-01.webp" alt=""></td>
-                                        <td>
-                                            Lorem ipsum dolor sit.
-                                        </td>
-                                        <td>$15</td>
-                                        <td>
-                                            <input type="number" min="1">
-                                        </td>
-                                        <td>
-                                            <button type="button">X</button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                    
-                                <tfoot>
-                                    <tr>
-                                        <td colspan="5" class="total">
-                                            <h4 class="heading-total">Total: <span id="total"></span></h4>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="5">
-                                            <button type="button" id="emptyCart">Vaciar carrito</button>
-                                        </td>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                        </div>
+                <div class="cart-icon" id="cart-toggle">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span id="cart-count">0</span>
                     </div>
 
-                </div> 
+                    <div class="cart-dropdown" id="cart-dropdown">
+                        <h3>Carrito</h3>
+                        <ul id="carrito-lista"></ul>
+                        <p id="total">Total: $0</p>
+                        <button id="vaciar-carrito">Vaciar carrito</button>
+                        <button id="checkout-btn" class="btn-checkout">Finalizar compra</button>
+                    </div>
+
 
                 
 
@@ -272,12 +236,15 @@
         </section>
     </main>
 
+
+
     <footer class="footer">
         <div class="container">
             <p>&copy;2024 MOTORCODE. All rights reserved</p>
         </div>
     </footer>
-
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="assets/plugins/fontawesome/js/all.min.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
