@@ -41,7 +41,7 @@ function obtenerDatosProducto(producto) {
     }
 
     guardarCarrito();
-    renderizarCarrito();
+    
 }
 
 function renderizarCarrito() {
@@ -82,26 +82,105 @@ function eliminarProducto(id) {
 }
 
 function guardarCarrito() {
-    localStorage.setItem('carrito', JSON.stringify(carrito));
+    localStorage.setItem('carrito', JSON.stringify(cart));
+    renderizarCarrito();
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
     const checkoutBtn = document.getElementById('checkout-btn');
 
     if (checkoutBtn) {
-        checkoutBtn.addEventListener('click', function () {
-            Swal.fire({
-                icon: 'success',
-                title: '¡Compra exitosa!',
-                text: 'Su compra ha sido procesada con éxito.',
-                confirmButtonColor: '#28a745'
+        checkoutBtn.addEventListener('click', async function () {
+            if (carrito.length === 0) {
+                Swal.fire({
+                    icon: 'info',
+                    title: 'Carrito vacío',
+                    text: 'Agregue productos antes de finalizar la compra.',
+                });
+                return;
+            }
+
+            const { value: formValues } = await Swal.fire({
+                title: 'Ingrese sus datos',
+                html:
+                    '<input id="swal-name" class="swal2-input" placeholder="Nombre completo">' +
+                    '<input id="swal-email" type="email" class="swal2-input" placeholder="Correo electrónico">' +
+                    '<input id="swal-address" class="swal2-input" placeholder="Dirección de envío">',
+                focusConfirm: false,
+                confirmButtonText: 'Continuar',
+                preConfirm: () => {
+                    const name = document.getElementById('swal-name').value;
+                    const email = document.getElementById('swal-email').value;
+                    const address = document.getElementById('swal-address').value;
+
+                    if (!name || !email || !address) {
+                        Swal.showValidationMessage('Por favor, complete todos los campos');
+                        return false;
+                    }
+
+                    return { name, email, address };
+                }
             });
 
-            cart.length = 0; // Vacía el carrito
-            updateCart();
+            if (formValues) {
+                const orden = {
+                    cliente: formValues,
+                    carrito: carrito,
+                    total: calcularTotal()
+                };
+
+                localStorage.setItem('ordenCompra', JSON.stringify(orden));
+                mostrarResumenCompra(orden);
+            }
         });
     }
 });
+
+function calcularTotal() {
+    return carrito.reduce((total, item) => total + item.precio * item.cantidad, 0);
+}
+
+function mostrarResumenCompra(data) {
+    const resumen = `
+        <p><strong>Nombre:</strong> ${data.cliente.name}</p>
+        <p><strong>Email:</strong> ${data.cliente.email}</p>
+        <p><strong>Dirección:</strong> ${data.cliente.address}</p>
+        <p><strong>Total:</strong> $${data.total.toLocaleString('es-AR')}</p>
+        <hr>
+        <p><strong>Productos:</strong></p>
+        <ul style="text-align:left;">
+            ${data.carrito.map(item => `<li>${item.nombre} x${item.cantidad}</li>`).join('')}
+        </ul>
+    `;
+
+    Swal.fire({
+        title: 'Resumen de compra',
+        html: resumen,
+        confirmButtonText: 'Confirmar compra',
+        showCancelButton: true,
+        cancelButtonText: 'Cancelar',
+        confirmButtonColor: '#28a745',
+    }).then(result => {
+        if (result.isConfirmed) {
+            localStorage.removeItem('ordenCompra');
+            carrito.length = 0;
+            guardarCarrito();
+
+            Swal.fire({
+                icon: 'success',
+                title: '¡Compra realizada!',
+                text: 'Su compra ha sido procesada con éxito.',
+                confirmButtonColor: '#28a745'
+            });
+        }
+    });
+}
+
+function guardarCarrito() {
+    renderizarCarrito(); 
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
 
 
 
