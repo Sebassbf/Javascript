@@ -35,7 +35,7 @@
         </div>
 
         <form class="form-header">
-            <input type="search" name="search" placeholder="Search...">
+            <input type="search" name="search" id="buscador" placeholder="Buscar productos...">
             <button type="submit"><i class="fa-solid fa-magnifying-glass icon-glass"></i></button>
         </form>
     </header>
@@ -61,6 +61,10 @@
         <section class="products" id="listaProductos">
             <h2>Productos</h2>
             <div class="products-grid container">
+                <p id="sin-resultados" style="display: none; text-align: center; margin-top: 20px; font-weight: bold; color: #dc3545;">
+                    No se encontraron resultados.
+                </p>
+
                 <div class="product">
                     <img src="assets/img/productos/producto-01.webp" alt="image product">
                     <div class="product-info">
@@ -244,7 +248,7 @@
         </div>
     </footer>
 
-    
+
     <div id="mensaje-agregado" class="mensaje-agregado">✓ Producto agregado al carrito</div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

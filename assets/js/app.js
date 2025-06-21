@@ -10,6 +10,31 @@ document.addEventListener('DOMContentLoaded', () => {
     renderizarCarrito();
 });
 
+const buscador = document.getElementById('buscador');
+const sinResultados = document.getElementById('sin-resultados');
+
+buscador.addEventListener('input', () => {
+    const texto = buscador.value.toLowerCase();
+    const productos = document.querySelectorAll('#listaProductos .product');
+    let coincidencias = 0;
+
+    productos.forEach(producto => {
+        const titulo = producto.querySelector('h4').textContent.toLowerCase();
+        const descripcion = producto.querySelector('.product-text').textContent.toLowerCase();
+
+        if (titulo.includes(texto) || descripcion.includes(texto)) {
+            producto.style.display = 'block';
+            coincidencias++;
+        } else {
+            producto.style.display = 'none';
+        }
+    });
+
+    sinResultados.style.display = coincidencias === 0 ? 'block' : 'none';
+});
+
+
+
 listaProductos.addEventListener('click', e => {
     if (e.target.classList.contains('agregar-carrito')) {
         const producto = e.target.closest('.product');
