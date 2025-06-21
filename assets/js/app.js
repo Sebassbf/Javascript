@@ -14,8 +14,19 @@ listaProductos.addEventListener('click', e => {
     if (e.target.classList.contains('agregar-carrito')) {
         const producto = e.target.closest('.product');
         obtenerDatosProducto(producto);
+        mostrarMensajeAgregado();
     }
 });
+
+function mostrarMensajeAgregado() {
+    const mensaje = document.getElementById('mensaje-agregado');
+    mensaje.classList.add('mostrar');
+
+    setTimeout(() => {
+        mensaje.classList.remove('mostrar');
+    }, 1500);
+}
+
 
 vaciarBtn.addEventListener('click', () => {
     carrito.length = 0;

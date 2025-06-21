@@ -532,4 +532,24 @@ img {
     cursor: pointer;
 }
 
+.mensaje-agregado {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 1000;
+    transform: translateY(-20px);
+}
+
+.mensaje-agregado.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
 
